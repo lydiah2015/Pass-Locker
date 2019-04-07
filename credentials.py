@@ -26,3 +26,8 @@ class User:
         deletes user details from the array that has been saved
         """
         User.user_list.remove(self)
+
+class Credentials:
+
+    def __init__(self):
+        self.credentials_lists=[]]
