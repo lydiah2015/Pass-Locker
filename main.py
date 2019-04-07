@@ -49,6 +49,13 @@ def add_new_account():
     input("Done, Press Enter to Continue")
  
 
+# option 3 
+def remove_credential():
+    name=input("Account name: ")
+    user.credential.remove_credential(name)
+    input("Done, Press Enter to Continue")
+
+# option 4
 def list_credentials():
     print("#"*50)
     for cred in user.credential.credentials_list:
@@ -72,6 +79,9 @@ if __name__=="__main__":
 
         if option == 2:
             add_new_account()
+
+        if option == 3:
+            remove_credential()
 
         if option == 4:
             list_credentials()
