@@ -1,6 +1,6 @@
 import unittest
 
-from credentials import User
+from user import User
  
 
 class TestUser(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestUser(unittest.TestCase):
         """
         run before each test
         """
-        self.new_user = User("Elle","Ice","icy","123456")
+        self.new_user = User("icy","123456")
 
     def tearDown(self):
             '''
@@ -21,8 +21,7 @@ class TestUser(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_user.first_name,"Elle")
-        self.assertEqual(self.new_user.last_name,"Ice")
+
         self.assertEqual(self.new_user.username,"icy")
         self.assertEqual(self.new_user.password,"123456")
     
@@ -38,7 +37,7 @@ class TestUser(unittest.TestCase):
         checks if we can save multiple user 
         '''
         self.new_user.save_user()
-        test_user = User("lsd","sia","diplo","654321") # new user
+        test_user = User("diplo","654321") # new user
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
@@ -47,7 +46,7 @@ class TestUser(unittest.TestCase):
         test of whether saved user details can be deleted from  the array that has been saved
         """
         self.new_user.save_user()
-        new_user2 = User("lsd","sia","diplo","654321") #new user
+        new_user2 = User("diplo","654321") #new user
         new_user2.save_user()
         self.new_user.delete_user()# Deleting a user object
         self.assertEqual(len(User.user_list),1)
@@ -55,5 +54,3 @@ class TestUser(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-class 
