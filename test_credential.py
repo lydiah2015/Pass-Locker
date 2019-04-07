@@ -28,6 +28,15 @@ class TestCredential(unittest.TestCase):
         self.credential.add_credential("facebook","user@mail.com","password")
         self.assertEqual(len(self.credential.credentials_list),1)
 
+    def test_remove_credential(self):
+        """
+        test removing credential
+        """
+        self.credential.add_credential("facebook","user@mail.com","password")
+        self.assertEqual(len(self.credential.credentials_list),1)
+        self.credential.remove_credential("facebook")
+        self.assertEqual(len(self.credential.credentials_list),0)
+
     
 
 if __name__ == '__main__':

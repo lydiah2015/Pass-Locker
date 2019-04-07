@@ -18,8 +18,9 @@ class Credential:
         for cred in self.credentials_list:
             if cred["name"]==name:
                 self.credentials_list.remove(cred)
-                return True
-        print("Credential:{} not found".format(name))
-        return False
+                print("Removed credential: %s"%(name))
+                return 
+        print("Credential:%s not found"%(name))
+
 
     
