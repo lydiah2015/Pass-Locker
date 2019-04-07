@@ -20,6 +20,20 @@ def select_option():
     return option
 
 
+def add_existing_account():
+    name=input("Account name:")
+    login=input("Login: ")
+    password=input("Password: ")
+    user.credential.add_credential(name,login,password)
+    
+
+def list_credentials():
+    print("#"*50)
+    for cred in user.credential.credentials_list:
+        print(
+            "Account Name: %s    Login: %s    Password: %s"%(cred["name"],cred["login"],cred["password"])
+        )
+    print("#"*50)
 
 if __name__=="__main__":
     print_message_head("Welcome To Password Locker")
@@ -30,6 +44,11 @@ if __name__=="__main__":
 
     while True:
         option=select_option()
+        if option ==1:
+            add_existing_account()
+
+        if option == 4:
+            list_credentials()
 
         if option == 5:
             break
