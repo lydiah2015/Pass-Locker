@@ -3,11 +3,17 @@ import random
 from user import User
 
 def print_message_head(message):
+    '''
+    print welcome message function
+    '''
     print("*"*50)
     print(message.upper())
     print("*"*50+"\n")
 
 def login():
+    '''
+    Logs in a new user
+    '''
     username=input("Username: ")
     password= input("Password: ")
     user.username=username
@@ -15,6 +21,9 @@ def login():
 
 
 def select_option():
+    '''
+    prompt user to select option
+    '''
     print("\nChose an option:\n")
     print("1)Add existing account.\n2)Add new account.\n3)Delete credential.\n4)List Credentials.\n5)Exit.")
     option=int(input("Option: "))
@@ -23,6 +32,9 @@ def select_option():
 
 # option 1
 def add_existing_account():
+    '''
+    enables user to add an existing account 
+    '''
     name=input("Account name:")
     login=input("Login: ")
     password=input("Password: ")
@@ -32,6 +44,9 @@ def add_existing_account():
 
 # option 2 
 def add_new_account():
+    '''
+    enables user to create a new account with option of random password
+    '''
     name=input("Account name:")
     login=input("Login: ")
     print("\nChose an option:\n")
@@ -51,12 +66,18 @@ def add_new_account():
 
 # option 3 
 def remove_credential():
+    '''
+    enables user to delete credential by account name
+    '''
     name=input("Account name: ")
     user.credential.remove_credential(name)
     input("Done, Press Enter to Continue")
 
 # option 4
 def list_credentials():
+    '''
+    lists all the credentials of the user
+    '''
     print("#"*50)
     for cred in user.credential.credentials_list:
         print(
@@ -64,6 +85,7 @@ def list_credentials():
         )
     print("#"*50)
     input("Done, Press Enter to Continue")
+    
 
 if __name__=="__main__":
     print_message_head("Welcome To Password Locker")

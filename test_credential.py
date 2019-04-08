@@ -9,10 +9,10 @@ class TestCredential(unittest.TestCase):
         self.credential= Credential()
 
     def tearDown(self):
-            '''
-            tearDown method that does clean up after each test case has run.
-            '''
-            pass
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        pass
 
     def test_init(self):
         '''
